@@ -7,18 +7,15 @@ const app = express();
 
 console.log("Hello World");
 
-
 app.use("/public", express.static(path.join(__dirname, "public")));
-
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
-
 app.get("/json", (req, res) => {
-  const style = process.env.MESSAGE_STYLE; 
-  const message = style === "uppercase" ? "HELLO JSON" : "Hello json";
+  const style = process.env.MESSAGE_STYLE;
+  const message = style === "uppercase" ? "hello json" : "Hello json";
   res.json({ message });
 });
 
