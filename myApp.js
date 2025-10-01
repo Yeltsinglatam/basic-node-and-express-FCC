@@ -14,8 +14,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/json", (req, res) => {
-  const style = process.env.MESSAGE_STYLE;
-  const message = style === "uppercase" ? "HELLO JSON " : "Hello json";
+  const style = process.env.MESSAGE_STYLE; // leer dentro del handler
+  const message = style === "uppercase" ? "HELLO JSON" : "Hello json"; // <-- sin espacio
   res.json({ message });
 });
 
